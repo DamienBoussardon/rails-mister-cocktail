@@ -28,3 +28,4 @@ result["drinks"].each do |drink|
   Cocktail.create!(name: drink["strDrink"], picture: drink["strDrinkThumb"])
 end
 puts "done cocktail"
+
