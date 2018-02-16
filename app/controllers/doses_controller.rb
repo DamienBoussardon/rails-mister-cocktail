@@ -18,8 +18,7 @@ class DosesController < ApplicationController
   end
 
   def destroy
-    raise
-    @dose = Dose.find(params[:dose_id])
+    @dose = Dose.find(params[:id])
     @dose.destroy
     redirect_back(fallback_location: cocktail_path)
   end

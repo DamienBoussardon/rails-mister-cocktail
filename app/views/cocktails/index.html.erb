@@ -1,17 +1,23 @@
+  <%= render 'banner' %>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail|%>
+        <div class="col-xs-4">
+          <div class="card">
+            <%= image_tag "https://#{cocktail.picture}",class: 'card-picture' %>
+            <h3>
+                <%= cocktail.name %>
+            </h3>
 
-<div class="container">
-  <%= link_to "Add a new Cocktail", new_cocktail_path %>
-  <div class="row">
-    <% @cocktails.each do |cocktail|%>
-      <div class="col-xs-4">
-        <div class="card">
-          <h3><%=link_to cocktail_path(cocktail) do %>
-              <%= cocktail.name %>
-            <% end %>
-          </h3>
+
+          </div>
+          <%=link_to "", cocktail_path(cocktail), class: "card-link"%>
         </div>
-      </div>
-    <%end%>
+      <%end%>
+    </div>
   </div>
 </div>
+
+
 

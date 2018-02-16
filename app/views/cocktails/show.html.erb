@@ -1,9 +1,20 @@
+ <% var = "https://#{@cocktail.picture}"%>
+<div class="banner-show">
+<%= image_tag "https://#{@cocktail.picture}", class: "img-show-banner"%>
+</div>
+
 <div class="container">
 <h2><%= @cocktail.name %></h2>
 <hr>
-
-<h1>Add a new doses</h1>
+<h3>Ingredients</h3>
+<ul>
+  <% @cocktail.doses.each do |dose| %>
+    <li><%= dose.ingredient.name %> - <%= dose.description %><%= link_to dose_path(dose), method: :delete, data: {confirm: "are you sure asshole"} do %><i class="fas fa-times"></i></li> <%end%>
+  <%end%>
+</ul>
+<h2>Add a new doses</h2>
 <hr>
+
 
 <div class="container">
   <%= simple_form_for [ @cocktail, @dose]  do |f| %>
