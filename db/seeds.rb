@@ -25,7 +25,7 @@ drinks = open(url).read
 
 result = JSON.parse(drinks)
 result["drinks"].each do |drink|
-  Cocktail.create!(name: drink["strDrink"], picture: drink["strDrinkThumb"])
+  Cocktail.create!(name: drink["strDrink"], picture: "http://#{drink["strDrinkThumb"]}")
 end
 puts "done cocktail"
 

@@ -2,9 +2,11 @@
 <hr>
 
 <div class="container">
+  <div class="col-sm-offset-2 col-sm-8">
   <%= simple_form_for [@cocktail]  do |f| %>
-    <%= f.input :name %>
-    <%= f.input :picture %>
-    <%= f.submit "add a new Cocktail", class: "btn btn-primary" %>
+    <%= f.input :name%>
+    <%= f.input :picture, as: :file  %>
+    <%= f.submit "add a new Cocktail", class: "btn btn-primary col-sm-offset-4 col-sm-4" %>
   <% end %>
+  </div>
 </div>

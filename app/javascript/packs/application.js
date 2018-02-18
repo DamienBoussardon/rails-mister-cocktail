@@ -8,3 +8,19 @@
 // layout file, like app/views/layouts/application.html.erb
 
 console.log('Hello World from Webpacker')
+
+import Typed from 'typed.js';
+
+function loadDynamicBannerText() {
+  new Typed('#banner-typed-text', {
+    strings: ["You are thirsty", "You are in the right place"],
+    typeSpeed: 60,
+    loop: true
+  });
+}
+
+//export { loadDynamicBannerText };
+
+//import { loadDynamicBannerText } from '../components/banner.js';
+loadDynamicBannerText();
+

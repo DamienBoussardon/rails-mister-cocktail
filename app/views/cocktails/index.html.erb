@@ -5,11 +5,11 @@
       <% @cocktails.each do |cocktail|%>
         <div class="col-xs-4">
           <div class="card">
-            <%= image_tag "https://#{cocktail.picture}",class: 'card-picture' %>
+            <div class="card-cocktail-picture" style="background-image:linear-gradient(-225deg, rgba(168,101,0,0.3) 0%, rgba(0,36,61,0.3) 50%), url(<%= image_url cocktail.picture %>)">
             <h3>
                 <%= cocktail.name %>
             </h3>
-
+            </div>
 
           </div>
           <%=link_to "", cocktail_path(cocktail), class: "card-link"%>
